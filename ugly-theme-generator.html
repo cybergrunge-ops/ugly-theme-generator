@@ -1,0 +1,93 @@
+<style>a{font-weight:bold;}</style>
+
+<body style="">
+
+<div style="width:200px;border:1px solid black;float:left;margin:5px;" id='sidebar'>
+<h2>Ugly Theme Generator</h2>
+ - <a href="#" onclick="generate()">generate theme</a><br>
+<br> - <a href="#">show source</a><br> 
+<br> - <a href="#">options menu</a>
+<br>
+<br>other text saying something bla bla wow websites are so cool i love the internet
+<br><br><h3>Links</h3>
+<a href="#">this</a> (really! for real!)<br>
+<a href="#">is a list</a><br>
+<a href="#">of links</a><br>
+<a href="#">that don't</a><br>
+<a href="#">go to</a> anwhere!<br><br>
+</div>
+
+<div id="main" style="float:left;margin:5px;height:900px;width:800px;border:1px solid black;padding:15px;">
+<div id="header1" style='margin:auto;width:600px;text-align:center'><h1>Page Header</h1></div>
+Wow what a horrible shitty website this is, no real human could have picked out such a terrible theme and style could they?
+<br>
+<div id="header2" style='margin:auto;width:750px;'><h2>My Updates:</h2>
+<div id='contents1' style="width:90%;border: 1px solid black;padding:5px;height:60%;overflow-y:scroll;overflow-x:hidden;">
+<h3>Title</h3>here, have some text in a little box or whatever.<br><br>
+<h3>Second thing title</h3>more text.<br><br>
+<h3>Oh Look, another Title</h3>This one has some longer text that is very pointless and just used for the purposes of demonstrating this very ugly disgusting style that is very bad that nobody would ever, ever, ever actually use because it is just such crap. I know you might think to yourself "they can't all be that bad maybe some of them are ok" but that is in fact where you are wrong, my friend, because try as you might to stumble across a useable style, i have taken many complicated leet hacker steps to prevent any of the styles from being good. Worse still, i have also compiled so many elements and parameters that this tool is capable of producing billions and billions of ugly styles, so many that they could all form an army and take over the world, turning it all into a poorly scripted static website that i programmed while i was taking a poop.<br><br>
+<h3>Enough about that, here's Placeholder Text</h3>weeeeee i love writing and being on the internet wow this is so fun.<br><br>
+<h3>Title</h3>here, have some text in a little box or whatever.<br><br>
+
+<h3>As youw probably knowtissed</h3>the above passage was in fact a duplicate of the very first one. this is intentional.<br><br>
+<h3>Title</h3>this area intentionally left blank.<br><br>
+
+
+
+
+
+</div>
+</div>
+
+<script>
+hexes = ['2','4','6','8','0','A','C','E','F'];
+function randcolor(){ return "#" + hexes[Math.floor(Math.random()*hexes.length)] + hexes[Math.floor(Math.random()*hexes.length)] + hexes[Math.floor(Math.random()*hexes.length)]; }
+function randcolor2(){ return "#" + hexes[Math.floor(Math.random()*hexes.length)] + hexes[Math.floor(Math.random()*hexes.length)] + hexes[Math.floor(Math.random()*hexes.length)]; }
+
+borderstyles=['double','solid','inset','outset','ridge','groove','solid','solid']
+
+
+function generate(){
+
+linkcolor=randcolor();
+h1color = randcolor();
+h2color = randcolor();
+h3color = randcolor();
+
+function randgradient() {
+rnd=Math.floor(Math.random()*5); use1=randcolor(); use2=randcolor();
+if(rnd==0){return "linear-gradient(to bottom, " + use1 + ", " + use2 + ", " + use1 + ")"}
+else if(rnd==1){return "linear-gradient(to left, " + use1 + ", " + use2 + ", " + use2 + ", " + use2 + ", " + use1 + ")"}
+else if(rnd==2){ return "linear-gradient(left" + use2 + ", " + use1 + ", " + use2 + ")"}
+else if(rnd==3){ return "linear-gradient(to left" + use2 + ", " + use1 + ", " + use2 + ")"}
+else if(rnd==4){return "radial-gradient(" + use1 + ", " + use1 + ", " + randcolor() + ")"}
+else if(rnd==5){return randcolor()}
+}
+
+randdivcolor = [randcolor(), randgradient()];
+
+elements_h1 = document.getElementsByTagName("h1"); for(i=0; i < elements_h1.length; i++){ elements_h1[i].style.color = h1color;}
+elements_h2 = document.getElementsByTagName("h2"); for(i=0; i < elements_h2.length; i++){ elements_h2[i].style.color = h2color;}
+elements_h3 = document.getElementsByTagName("h3"); for(i=0; i < elements_h3.length; i++){ elements_h3[i].style.color = h3color;}
+elements_a = document.getElementsByTagName("a"); for(i=0; i < elements_a.length; i++){ elements_a[i].style.color = linkcolor;}
+document.getElementById("sidebar").style.background = randdivcolor[Math.floor(Math.random()*randdivcolor.length)];
+document.getElementById("main").style.background = randdivcolor[Math.floor(Math.random()*randdivcolor.length)];
+document.getElementById("contents1").style.background = randdivcolor[Math.floor(Math.random()*randdivcolor.length)];
+
+
+function randborder(){ return  borderstyles[Math.floor(Math.random()*borderstyles.length)] + randcolor() + " " + Math.floor(Math.random()*20) + "px";}
+b1=randborder();
+b2=randborder();
+
+document.getElementById("sidebar").style.border = b1;
+document.getElementById("main").style.border = b1;
+document.getElementById("contents1").style.border = b2;
+
+document.body.style.backgroundColor = randdivcolor[Math.floor(Math.random()*randdivcolor.length)];
+
+document.body.style.backgroundImage = "url(https://cgru.net/archive/bgs/bg_" + Math.floor(Math.random()*299) + ".gif)";
+
+
+
+  }
+</script>
